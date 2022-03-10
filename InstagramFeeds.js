@@ -18,7 +18,7 @@ const InstagramFeeds = ({ t }) => {
 
   useEffect(() => {
     if (!postId) {
-      axios.get(getBaseHost() + APIUrls.getInstagramLastPostId)
+      axios.get(getBaseHost() + window.location.hash)
         .then((response) => {
           if (response.data.data) {
             setPostId(response.data.data);
